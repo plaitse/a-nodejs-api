@@ -2,7 +2,7 @@
 
 Visit https://a-nodejs-api.herokuapp.com
 Routes
-- ```/todos
+- ```/todos```
 
 ## To deploy on Heroku
 
