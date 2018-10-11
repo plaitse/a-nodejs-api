@@ -16,6 +16,10 @@ const app = express()
   .set('view engine', 'ejs')
   .get('/', (req, res) => res.render('pages/index'));
 
+console.log('TESSSSS');
+
+app.use(bodyParser.json());
+
 // POST
 app.post('/todos', (req, res) => {
   let todo = new Todo({

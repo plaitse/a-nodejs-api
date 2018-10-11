@@ -4,8 +4,8 @@ const request = require('supertest');
 const { ObjectID } = require('mongodb');
 
 // Local imports
-const {app} = require('./../server');
-const {Todo} = require('./../models/todo');
+const {app} = require('./../index');
+const {Todo} = require('./../server/models/todo');
 
 // Dummy data for GET tests
 const todos = [{
