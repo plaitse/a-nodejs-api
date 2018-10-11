@@ -1,5 +1,9 @@
 # Node.js API
 
+Visit https://a-nodejs-api.herokuapp.com
+Routes
+- ```/todos
+
 ## To deploy on Heroku
 
 ### Connect DB online
