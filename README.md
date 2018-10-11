@@ -23,3 +23,7 @@ Routes:
     "Test via postman"
 }
 ```
+## To test on local machine
+- ```./mongod --dbpath ~/Desktop/Back-End/mongo-data``` in mongo/bin root folder
+- ```npm run testWatch```
+- Use Robomongo to check data
