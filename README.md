@@ -18,12 +18,14 @@ Routes:
 
 ## To test the API via Postman
 - GET https://a-nodejs-api.herokuapp.com/todos
+- GET https://a-nodejs-api.herokuapp.com/todos:id
 - POST https://a-nodejs-api.herokuapp.com/todos
 ```
 {
     "Test via postman"
 }
 ```
+- DELETE https://a-nodejs-api.herokuapp.com/todos:id
 - *NB: It can take up to 1 minute for the server to charge*
 
 ## To test on local machine
