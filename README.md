@@ -17,12 +17,15 @@ Routes:
 - ```git push heroku master```
 
 ## To test the API via Postman
+- GET https://a-nodejs-api.herokuapp.com/todos
 - POST https://a-nodejs-api.herokuapp.com/todos
 ```
 {
     "Test via postman"
 }
 ```
+- *NB: It can take up to 1 minute for the server to charge*
+
 ## To test on local machine
 - ```./mongod --dbpath ~/Desktop/Back-End/mongo-data``` in mongo/bin root folder
 - ```npm run testWatch``` to run units tests
