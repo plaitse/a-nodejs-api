@@ -25,5 +25,6 @@ Routes:
 ```
 ## To test on local machine
 - ```./mongod --dbpath ~/Desktop/Back-End/mongo-data``` in mongo/bin root folder
-- ```npm run testWatch```
+- ```npm run testWatch``` to run units tests
+- ```npm start``` to run server
 - Use Robomongo to check data
