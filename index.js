@@ -12,6 +12,7 @@ const PORT = process.env.PORT || 5000;
 const { mongoose } = require('./server/mongoose/mongoose');
 const { Todo } = require('./server/models/todo');
 const { User } = require('./server/models/user');
+const { authenticate } = require('./server/middleware/authenticate');
 
 const app = express()
   .use(express.static(path.join(__dirname, 'public')))
@@ -101,14 +102,10 @@ app.patch('/todos/:id', (req, res) => {
 
 /* --- --- USER --- --- */
 
-// POST /users
+// POST
 app.post('/users', (req, res) => {
-    console.log(req.body);
     const body = _.pick(req.body, ['email', 'password']);
-    console.log(body);
     let user = new User(body);
-    console.log(user);
-
     user.save().then(() => {
         return user.generateAuthToken();
     }).then((token) => {
@@ -117,6 +114,11 @@ app.post('/users', (req, res) => {
         res.status(400).send(error);
     });
 });
+
+// GET MYSELF
+app.get('/users/me', authenticate, (req, res) => {
+    res.send(req.user);
+})
 
 app.listen(PORT, () => console.log(`Listening on ${ PORT }`));
 
