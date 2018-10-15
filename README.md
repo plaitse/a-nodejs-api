@@ -17,6 +17,9 @@ Routes:
 - ```git push heroku master```
 
 ## To test the API via Postman
+- *NB: It can take up to 1 minute for the server to charge*
+
+### Todos routes
 - GET https://a-nodejs-api.herokuapp.com/todos
 - GET https://a-nodejs-api.herokuapp.com/todos:id
 - POST https://a-nodejs-api.herokuapp.com/todos
@@ -26,10 +29,27 @@ Routes:
 }
 ```
 - DELETE https://a-nodejs-api.herokuapp.com/todos:id
-- *NB: It can take up to 1 minute for the server to charge*
+- UPDATE https://a-nodejs-api.herokuapp.com/todos:id
+```
+{
+	"text": "New test"
+}
+```
+
+### Users routes
+- GET https://a-nodejs-api.herokuapp.com/users/me
+-> *passing x-auth/token in headers request found in POST headers response*
+- POST https://a-nodejs-api.herokuapp.com/users
+```
+{
+	"email": "email@test.com",
+	"password": "pass123!"
+}
+```
 
 ## To test on local machine
-- ```./mongod --dbpath ~/Desktop/Back-End/mongo-data``` in mongo/bin root folder
+- Install MongoDB et create a mongo-data folder next to it
+- ```./mongod --dbpath ~/.../mongo-data``` in mongo/bin root folder
 - ```npm run testWatch``` to run units tests
 - ```npm start``` to run server
 - Use Robomongo to check data
