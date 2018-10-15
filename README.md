@@ -38,7 +38,7 @@ Routes:
 
 ### Users routes
 - GET https://a-nodejs-api.herokuapp.com/users/me
-*passing x-auth/token in headers request found in POST headers response*
+-> *passing x-auth/token in headers request found in POST headers response*
 - POST https://a-nodejs-api.herokuapp.com/users
 ```
 {
