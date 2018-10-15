@@ -37,12 +37,15 @@ Routes:
 ```
 
 ### Users routes
-- GET https://a-nodejs-api.herokuapp.com/users/me passing x-auth/token in headers request found in POST headers response
+- GET https://a-nodejs-api.herokuapp.com/users/me
+*passing x-auth/token in headers request found in POST headers response*
 - POST https://a-nodejs-api.herokuapp.com/users
+```
 {
 	"email": "email@test.com",
 	"password": "pass123!"
 }
+```
 
 ## To test on local machine
 - Install MongoDB et create a mongo-data folder next to it
