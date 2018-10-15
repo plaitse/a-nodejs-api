@@ -21,6 +21,8 @@ const app = express()
 
 app.use(bodyParser.json());
 
+/* --- --- TODO --- --- */
+
 // POST
 app.post('/todos', (req, res) => {
   let todo = new Todo({
@@ -75,7 +77,7 @@ app.delete('/todos/:id', (req, res) => {
 });
 
 // UPDATE BY ID
-app.patch('/todos/:id', (req,res) => {
+app.patch('/todos/:id', (req, res) => {
     const id = req.params.id;
     const body = _.pick(req.body, ['text', 'completed']);
     if (!ObjectID.isValid(id)) {
@@ -97,7 +99,24 @@ app.patch('/todos/:id', (req,res) => {
     });
 });
 
-//TEST
+/* --- --- USER --- --- */
+
+// POST /users
+app.post('/users', (req, res) => {
+    console.log(req.body);
+    const body = _.pick(req.body, ['email', 'password']);
+    console.log(body);
+    let user = new User(body);
+    console.log(user);
+
+    user.save().then(() => {
+        return user.generateAuthToken();
+    }).then((token) => {
+        res.header('x-auth', token).send(user);
+    }).catch((error) => {
+        res.status(400).send(error);
+    });
+});
 
 app.listen(PORT, () => console.log(`Listening on ${ PORT }`));
 
