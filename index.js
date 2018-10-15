@@ -1,3 +1,5 @@
+require('./server/config/config');
+
 // Library imports
 const bodyParser = require('body-parser');
 const express = require('express');
