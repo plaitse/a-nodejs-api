@@ -29,7 +29,8 @@ Routes:
 - *NB: It can take up to 1 minute for the server to charge*
 
 ## To test on local machine
-- ```./mongod --dbpath ~/Desktop/Back-End/mongo-data``` in mongo/bin root folder
+- Install MongoDB et create a mongo-data folder next to it
+- ```./mongod --dbpath ~/.../mongo-data``` in mongo/bin root folder
 - ```npm run testWatch``` to run units tests
 - ```npm start``` to run server
 - Use Robomongo to check data
