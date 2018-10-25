@@ -25,7 +25,7 @@ Routes:
 - POST https://a-nodejs-api.herokuapp.com/todos
 ```
 {
-    "Test via postman"
+    "text": "Test via postman"
 }
 ```
 - DELETE https://a-nodejs-api.herokuapp.com/todos:id
