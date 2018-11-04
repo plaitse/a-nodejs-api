@@ -48,8 +48,9 @@ Routes:
 ```
 
 ## To test on local machine
-- Install MongoDB et create a mongo-data folder next to it
+- Install MongoDB and create a mongo-data folder next to it
 - ```./mongod --dbpath ~/.../mongo-data``` in mongo/bin root folder
+- if port already used : ```sudo lsof -i :portNumber```and ```kill -9 PID```
 - ```npm run testWatch``` to run units tests
 - ```npm start``` to run server
 - Use Robomongo to check data
