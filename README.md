@@ -28,7 +28,7 @@ Routes:
     "text": "Test via postman"
 }
 ```
-- *NB: Be sure to select JSON (application/json) when writing the body in Postman*
+-> *NB: Be sure to select JSON (application/json) when writing the body in Postman*
 - DELETE https://a-nodejs-api.herokuapp.com/todos:id
 - UPDATE https://a-nodejs-api.herokuapp.com/todos:id
 ```
