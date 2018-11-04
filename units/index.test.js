@@ -15,7 +15,7 @@ beforeEach(populateTodos);
 
 describe('POST /todos', () => {
     it('should create a new todo', (done) => {
-        let text = 'Test todo text';
+        const text = 'Test todo text';
         request(app)
             .post('/todos')
             .send({text})
@@ -78,7 +78,7 @@ describe('GET /todos/:id', () => {
     });
 
     it('should return 404 if todo not found', (done) => {
-        let hexId = new ObjectID().toHexString();
+        const hexId = new ObjectID().toHexString();
         request(app)
             .get(`/todos/${hexId}`)
             .expect(404)
@@ -95,7 +95,7 @@ describe('GET /todos/:id', () => {
 
 describe('DELETE /todos/:id', () => {
     it('should remove a todo', (done) => {
-        let hexId = todos[1]._id.toHexString();
+        const hexId = todos[1]._id.toHexString();
         request(app)
             .delete(`/todos/${hexId}`)
             .expect(200)
@@ -116,7 +116,7 @@ describe('DELETE /todos/:id', () => {
     });
 
     it('should return 404 if todo not found', (done) => {
-        let hexId = new ObjectID().toHexString();
+        const hexId = new ObjectID().toHexString();
         request(app)
             .delete(`/todos/${hexId}`)
             .expect(404)
@@ -134,8 +134,8 @@ describe('DELETE /todos/:id', () => {
 
 describe('PATCH /todos/:id', () => {
     it('should update a todo', (done) => {
-        let hexId = todos[0]._id.toHexString();
-        let text = 'This should be the new text';
+        const hexId = todos[0]._id.toHexString();
+        const text = 'This should be the new text';
         request(app)
             .patch(`/todos/${hexId}`)
             .send({
@@ -152,8 +152,8 @@ describe('PATCH /todos/:id', () => {
     });
 
     it('should clear completedAt when todo is not completed', (done) => {
-        let hexId = todos[0]._id.toHexString();
-        let text = 'This should be the new text again';
+        const hexId = todos[0]._id.toHexString();
+        const text = 'This should be the new text again';
         request(app)
             .patch(`/todos/${hexId}`)
             .send({
@@ -204,8 +204,8 @@ describe('GET /users/me', () => {
 
 describe('POST /users', () => {
     it('should create a user', (done) => {
-        let email = 'example@dbtest.com';
-        let password = 'example123!'
+        const email = 'example@dbtest.com';
+        const password = 'example123!'
         request(app)
             .post('/users')
             .send({email, password})
@@ -228,8 +228,8 @@ describe('POST /users', () => {
     });
 
     it('should return validation errors if request invalid', (done) => {
-        let email = 'invalid';
-        let password = '2!'
+        const email = 'invalid';
+        const password = '2!'
         request(app)
             .post('/users')
             .send({email, password})
